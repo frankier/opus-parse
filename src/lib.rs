@@ -226,8 +226,8 @@ impl<T: Read> OpusStream<T> {
                         "s" => {
                             self.sent_id = req_value(&attributes, "id")?.parse::<u64>()?;
                             return Ok(
-                                FlatStreamBit::SubStreamBit(
-                                    SubStreamBit::SentDelim(
+                                FlatStreamBit::StreamBit(
+                                    StreamBit::SentDelim(
                                         SentDelim {
                                             id: self.sent_id,
                                             delim_type: DelimType::Start
@@ -238,8 +238,8 @@ impl<T: Read> OpusStream<T> {
                             let (delim_type, num_id) = parse_time_id(full_id.as_str())?;
                             let offset = parse_duration(req_value(&attributes, "value")?.as_str())?;
                             return Ok(
-                                FlatStreamBit::SubStreamBit(
-                                    SubStreamBit::BlockDelim(
+                                FlatStreamBit::StreamBit(
+                                    StreamBit::BlockDelim(
                                         BlockDelim {
                                             id: num_id,
                                             offset: offset,
@@ -267,8 +267,8 @@ impl<T: Read> OpusStream<T> {
                     match name.local_name.as_str() {
                         "s" => {
                             return Ok(
-                                FlatStreamBit::SubStreamBit(
-                                    SubStreamBit::SentDelim(
+                                FlatStreamBit::StreamBit(
+                                    StreamBit::SentDelim(
                                         SentDelim {
                                             id: self.sent_id,
                                             delim_type: DelimType::End
@@ -301,8 +301,8 @@ impl<T: Read> OpusStream<T> {
                         }
                     } else if let Some(word_id) = self.word_id {
                         return Ok(
-                            FlatStreamBit::SubStreamBit(
-                                SubStreamBit::Word(
+                            FlatStreamBit::StreamBit(
+                                StreamBit::Word(
                                     Word { id: word_id, word: chars })));
                     }
                 }
