@@ -1,0 +1,13 @@
+[package]
+
+name = "opus-parse"
+version = "0.0.1"
+authors = [ "Frankie Robertson <frankie@robertson.name>" ]
+
+[dependencies]
+itertools = "0.6.0"
+minidom = "0.3.0"
+xml-rs = "0.4.1"
+flate2 = "0.2.19"
+derive-error-chain = "0.10.1"
+error-chain = "0.10.0"
