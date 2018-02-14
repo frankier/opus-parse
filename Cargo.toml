@@ -1,8 +1,8 @@
 [package]
-
 name = "opus-parse"
 version = "0.0.1"
 authors = [ "Frankie Robertson <frankie@robertson.name>" ]
+homepage = "https://github.com/frankier/opus-parse"
 
 [dependencies]
 itertools = "0.6.0"
