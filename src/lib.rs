@@ -3,6 +3,7 @@ extern crate flate2;
 #[macro_use] extern crate error_chain;
 #[macro_use] extern crate derive_error_chain;
 extern crate itertools;
+extern crate walkdir;
 
 use std::fs::File;
 use std::io::{BufReader, Read};
@@ -15,6 +16,7 @@ use flate2::read::GzDecoder;
 use std::path::Path;
 mod duration;
 mod time_id;
+pub mod opensubtitles;
 use duration::parse_duration;
 use time_id::parse_time_id;
 
