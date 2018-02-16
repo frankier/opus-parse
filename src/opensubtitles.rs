@@ -20,7 +20,7 @@ fn id_of_path(path: &Path) -> Option<u64> {
 }
 
 /// Walk the tree of all subtitles for single language
-pub fn walk(path: &Path) -> Box<Iterator<Item=(u64, PathBuf)>> {
+pub fn walk<P: AsRef<Path>>(path: P) -> Box<Iterator<Item=(u64, PathBuf)>> {
     // XXX: Returns a boxed iterator. Change to impl Iterator when in stable.
     let walker = WalkDir::new(path).into_iter();
     let mut seen = HashSet::new();
