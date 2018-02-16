@@ -1,6 +1,6 @@
 [package]
 name = "opus-parse"
-version = "0.0.2"
+version = "0.0.3"
 authors = [ "Frankie Robertson <frankie@robertson.name>" ]
 homepage = "https://github.com/frankier/opus-parse"
 license = "CC0-1.0"
